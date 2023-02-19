@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>MBTI Playground</title>
+	<script type='text/javascript' src='script.js' defer></script>
+	<link rel='stylesheet' type='text/css' href='styles.css'>
+	<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css'>
+	<link rel='icon' type='image/png' href='icon.png'/>
+</head>
+<body>
+
+<nav>
+	<i class='bi bi-list' id='toggleMenu'></i>
+	<ul>
+		<li><a href='#atosMentais'>Atos Mentais</a></li>
+		<li><a href='#energia'>Energia</a></li>
+		<li><a href='#funcoesJulgamento'>Funções de Julgamento</a></li>
+		<li><a href='#funcoesPercepcao'>Funções de Percepção</a></li>
+		<li><a href='#papeis'>Papéis</a></li>
+		<li><a href='#eixosCognitivosJulgamento'>Eixos Cognitivos de Julgamento</a></li>
+		<li><a href='#eixosCognitivosPercepcao'>Eixos Cognitivos de Percepção</a></li>
+		<li><a href='#comunicacao'>Comunicação</a></li>
+		<li><a href='#raciocinio'>Raciocínio</a></li>
+		<li><a href='#temperamento'>Temperamento</a></li>
+		<li><a href='#montagem'>Montagem</a></li>
+	</ul>
+</nav>
+
+<section id='montagem'>
+	<h2>Monte uma personalidade</h2>
+	<div class='drag'>
+		<div class='conjunto-objetos-montagem local'>
+			<div draggable='true' class='objeto obj-funcao' id='si'>Si</div>
+			<div draggable='true' class='objeto obj-funcao' id='se'>Se</div>
+			<div draggable='true' class='objeto obj-funcao' id='ni'>Ni</div>
+			<div draggable='true' class='objeto obj-funcao' id='ne'>Ne</div>
+			<div draggable='true' class='objeto obj-funcao' id='ti'>Ti</div>
+			<div draggable='true' class='objeto obj-funcao' id='te'>Te</div>
+			<div draggable='true' class='objeto obj-funcao' id='fi'>Fi</div>
+			<div draggable='true' class='objeto obj-funcao' id='fe'>Fe</div>
+		</div>
+		<div class='dupla local-personalidade'>
+			<!-- <p class='descricao'>Personalidade</p> -->
+			<div class='local personalidade primeira'></div>
+			<div class='local personalidade segunda'></div>
+			<div class='local personalidade terceira'></div>
+			<div class='local personalidade quarta'></div>
+		</div>
+	</div>
+	<div class='resultado'>
+		<h3 id='res-personalidade'>Inexistente</h3>
+		<ul>
+			<li>Fonte de energia: <span id='res-energia'></span></li>
+			<li>Fonte de informação: <span id='res-informacao'></span></li>
+			<li>Forma de decisão: <span id='res-decisao'></span></li>
+			<li>Estilo de vida: <span id='res-viver'></span></li>
+			<li>Comunicação: <span id='res-comunicacao'></span></li>
+			<li>Raciocínio: <span id='res-raciocinio'></span></li>
+			<li>Temperamento: <span id='res-temperamento'></span></li>
+			<li>Loop: <span id='res-loop'></span></li>
+			<li>Grip: <span id='res-grip'></span></li>
+		</ul>
+	</div>
+</section>
+
+<section id='atosMentais'>
+	<h2>Atos Mentais</h2>
+	<div class='drag'>
+		<div class='conjunto-objetos local'>
+			<div draggable='true' class='objeto t'>T</div>
+			<div draggable='true' class='objeto n'>N</div>
+			<div draggable='true' class='objeto s'>S</div>
+			<div draggable='true' class='objeto f'>F</div>
+		</div>
+		<div>
+			<div class='dupla'>
+				<p class='descricao'>Forma de obter informações</p>
+				<div class='local s n'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Forma de avaliar as coisas</p>
+				<div class='local t f'></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id='energia'>
+	<h2>Energia</h2>
+	<div class='drag'>
+		<div class='conjunto-objetos local'>
+			<div draggable='true' class='objeto me'>A realidade é vista como fonte de energia e influência, com foco em leis concretas e implicações práticas. O processo é objetivo, com o sujeito se submetendo à realidade externa.</div>
+			<div draggable='true' class='objeto mi'>Mundo interior é fonte subjetiva de energia, com relação indireta ao externo. Busca contexto geral e o que está por dentro de ordens e pessoas, com o sujeito como criador.</div>
+		</div>
+		<div>
+			<div class='dupla'>
+				<p class='descricao'>Introversão</p>
+				<div class='local mi'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Extroversão</p>
+				<div class='local me'></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id='funcoesJulgamento'>
+	<h2>Funções de Julgamento</h2>
+	<div class='drag'>
+		<div class='conjunto-objetos local'>
+			<div draggable='true' class='objeto te'>Te</div>
+			<div draggable='true' class='objeto ti'>Ti</div>
+			<div draggable='true' class='objeto fe'>Fe</div>
+			<div draggable='true' class='objeto fi'>Fi</div>
+		</div>
+		<div>
+			<div class='dupla'>
+				<p class='descricao' title='Saudável: motivado pelo sucesso, definindo claros objetivos para o futuro e tendo as coisas feitas. Não saudável: controla demais a situação, perde a paciência e se torna muito insensível. Critérios impessoais para tomada de decisões, usa raciocínio geralmente indutivo com base em fatores externos e ideias gerais, dando importância a informações concretas como métricas, organizações, hierarquias e metas, visando eficiência e sustentabilidade: "como fazer", "o que precisa ser feito", "isso tem que ser assim", "tem que ser feito dessa forma".'>Critérios impessoais bem estabelecidos, eficiência.</p>
+				<div class='local te'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao' title='Saudável: desejo por entender o mundo, resolvendo problemas por conta própria de maneira eficiente. Não saudável: Rebela-se contra todos e confia demais em sua lógica subjetiva; culpa-se demais. Critérios impessoas para tomada de decisões, usa raciocínio geralmente dedutivo através de reflexão intelectual, buscando entender as ideias gerais dos fenômenos e solucionar problemas lógicos com base em informações subjetivas. Valoriza lógica, análise crítica, conhecimento e ideias: "o porquê", "isso pode ser feito assim", "isso é assim por causa de a+b", "a mais b resulta em c", "poderia ser feito dessa maneira".'>Critérios impessoais próprios, precisão.</p>
+				<div class='local ti'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao' title='Saudável: gosta de ajudar as pessoas em situações difíceis, é empático e compassivo. Não saudável: Subserviente, ovelha cega e conformista. Relacionada a conexões entre pessoas que compartilham valores objetivos comuns, respeitando a etiqueta social e a razão coletiva. Valoriza harmonia, relações interpessoais, valores sociais e sentimentos coletivos:  "o que precisamos", "as pessoas precisam disso", "temos necessidade disso", "as pessoas gostam quando".'>Ajudar e se adaptar aos outros.</p>
+				<div class='local fe'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao' title='Está em bom contato com os próprios sentimentos e sente-se capaz de fazer o que quiser. Não saudável: emotivo em excesso; sente-se estranho, um imigrante. Preocupa-se com autenticidade, valores pessoais e individualidade, valorizando sua autoimagem, privacidade e harmonia interior. Foca em seus próprios sentimentos e pode ser indiferente a causas que não lhe interessam: "o que é importante para mim", "eu gosto quando isso", "acredito que isso é importante", "eu sinto que", "me sinto como se", "o que eu preciso".'>Ajudar a si mesmo, manter-se fiel a si mesmo.</p>
+				<div class='local fi'></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id='funcoesPercepcao'>
+	<h2>Funções de Percepção</h2>
+	<div class='drag'>
+		<div class='conjunto-objetos local'>
+			<div draggable='true' class='objeto si'>Si</div>
+			<div draggable='true' class='objeto ni'>Ni</div>
+			<div draggable='true' class='objeto se'>Se</div>
+			<div draggable='true' class='objeto ne'>Ne</div>
+		</div>
+		<div>
+			<div class='dupla'>
+				<p class='descricao' title='Saudável: vive saudável e completamente o momento. Não saudável: obtém informações do mundo exterior sem filtro algum; superficial, raso, incapaz de planejar o futuro. Percebe os fenômenos de forma realista e concreta, utilizando apenas estímulos fisiológicos para obter prazer imediato, sensações, instinto, vitalidade, pureza estética e sensualidade: "isso é assim", "as coisas são como são", "a realidade é que", "eu quero isso", "tenho vontade de".'>Informação presente, segue em frente.</p>
+				<div class='local se'></div>
+			</div>
+
+			<div class='dupla'>
+				<p class='descricao' title='Saudável: Atém-se a bons métodos e confia na própria experiência. Não saudável: segue regras cegamente até falhar, incapaz de ter pensamentos originais; reacionário. Compara percepções do ambiente externo para criar parâmetros e fazer suposições subjetivas aos estímulos, construindo um catálogo de experiências. Valoriza estabilidade, experiências passadas, detalhes familiares, conhecimento prévio e conclusões:  "isso era assim", "as coisas são assim porque antes aconteceu isso", "as pessoas faziam isso", "eu passei por momentos em que", "eu sei que é assim porque".'>Experiências passadas, comparações.</p>
+				<div class='local si'></div>
+			</div>
+
+			<div class='dupla'>
+				<p class='descricao' title='Saudável: criativo, inovador e muito otimista. Não saudável: pula de tópico em tópico, é desorganizado e desatento. Orientada para o mundo externo e preocupada com o futuro próximo, intui diversas possibilidades para diferentes situações, tendo um aspecto criador e entusiasta. Valoriza o potencial positivo, ideias futuristas e a esperança de melhorias: "o que pode ser", "o que será que acontece se", "e se a gente fizesse isso", "já pensou se".'>Voltado a detalhes e novas ideias.</p>
+				<div class='local ne'></div>
+			</div>
+
+			<div class='dupla'>
+				<p class='descricao' title='Saudável: planejamento otimista do futuro, com boas previsões. Não saudável: confia em palpites, perde o controle do momento presente e se torna irrealista, acreditando em besteiras. Orientada ao mundo interno e coisas intangíveis, com linguagem metafórica, e utiliza informações contextuais para encontrar significados profundos nos eventos e visualizar implicações futuras. Valoriza a profundidade, visões, pressentimentos, significados subjetivos e reflexão: "o que vai ser", "isso vai ser assim", "quando isso acontecer, no futuro teremos", "é provável que isso seja assim", "se você fizer isso, vai acontecer isso".'>Noção geral das coisas, novas teorias.</p>
+				<div class='local ni'></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id='papeis'>
+	<h2>Papéis</h2>
+	<div class='drag'>
+		<div class='conjunto-objetos local'>
+			<div draggable='true' class='objeto dom'>Dominante</div>
+			<div draggable='true' class='objeto aux'>Auxiliar</div>
+			<div draggable='true' class='objeto ter'>Terciária</div>
+			<div draggable='true' class='objeto inf'>Inferior</div>
+		</div>
+		<div>
+			<div class='dupla'>
+				<p class='descricao'>Função com a qual se tem mais proficiência, tanto em termos de julgamento ou percepção, quanto em termos de atitude introvertida ou extrovertida.</p>
+				<div class='local dom'></div>
+			</div>
+
+			<div class='dupla'>
+				<p class='descricao'>Cumpre o papel de equilibrar, frear e complementar a função dominante.</p>
+				<div class='local aux'></div>
+			</div>
+
+			<div class='dupla'>
+				<p class='descricao'>Função onde se encontram os mimos e erros mais infantis, embora também seja possível encontrar conforto na realização de algumas tarefas.</p>
+				<div class='local ter'></div>
+			</div>
+
+			<div class='dupla'>
+				<p class='descricao'>Função onde se encontram as suas inseguranças, medos e desejos ocultos, já que o sujeito tem com ela baixa proficiência e muita ignorância.</p>
+				<div class='local inf'></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id='eixosCognitivosJulgamento'>
+	<h2>Eixos Cognitivos de Julgamento</h2>
+	<div class='drag'>
+		<div class='conjunto-objetos local'>
+			<div draggable='true' class='objeto tefi'>Te-Fi</div>
+			<div draggable='true' class='objeto tife'>Ti-Fe</div>
+			<div draggable='true' class='objeto feti'>Fe-Ti</div>
+			<div draggable='true' class='objeto fite'>Fi-Te</div>
+		</div>
+		<div>
+			<div class='dupla'>
+				<p class='descricao'>Demonstra esforço para ser reconhecido, mas tem dificuldade de lidar com os próprios sentimentos. 'Eu quero ser reconhecido pelo esforço que estou fazendo', 'eu sou muito bom no que faço e espero que reconheçam isso', 'quero me sentir bem por fazer isso'.</p>
+				<div class='local tefi'></div>
+			</div>
+
+			<div class='dupla'>
+				<p class='descricao'>Acumula conhecimento para aprender sobre a sociedade, mas tem dificuldade de lidar com os outros. 'Eu aprendo isso/faço dessa forma, porque é bom para todos/ para a sociedade/ porque as pessoas vão gostar de saber disso', 'a sociedade vai me reconhecer'.</p>
+				<div class='local tife'></div>
+			</div>
+
+			<div class='dupla'>
+				<p class='descricao'>Segue os parâmetros sociais, porque considera o mais lógico a ser feito, mas tem certa dificuldade pensar em novos parâmetros por conta própria. 'Eu faço isso pelas pessoas porque é o obvio/lógico a se fazer/elas esperam isso de mim', 'quero que minhas coisas façam sentido para os outros'.</p>
+				<div class='local feti'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Seus sentimentos são os mais corretos e devem originar um novo parâmetro de comportamento, mas tem certo desprezo por modelos estabelecidos. 'Eu sinto que as coisas são melhores assim e espero que os outros façam o mesmo', 'eu sinto que isso é o certo então eu faço', 'o que estou fazendo é o certo então vou continuar fazendo'.</p>
+				<div class='local fite'></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section id='eixosCognitivosPercepcao'>
+	<h2>Eixos Cognitivos de Percepção</h2>
+	<div class='drag'>
+		<div class='conjunto-objetos local'>
+			<div draggable='true' class='objeto seni'>Se-Ni</div>
+			<div draggable='true' class='objeto sine'>Si-Ne</div>
+			<div draggable='true' class='objeto nesi'>Ne-Si</div>
+			<div draggable='true' class='objeto nise'>Ni-Se</div>	
+		</div>
+		<div>
+			<div class='dupla'>
+				<p class='descricao'>O prazer é uma necessidade que não pode ser deixada para mais tarde, justamente porque mal sabe lidar com o futuro. 'Eu tenho vontade de fazer isso e não posso deixar para depois', 'eu quero agora (e não no futuro)', 'isso é assim hoje, o futuro ninguém sabe', 'eu faço agora porque depois não será igual'.</p>
+				<div class='local seni'></div>
+			</div>
+
+			<div class='dupla'>
+				<p class='descricao'>Acumular informação sensorial para sobreviver num mundo caótico, pois tem dificuldade de lidar com muitas ideias. 'Isso sempre foi assim, porque seria diferente agora/amanhã?', 'eu sempre soube disso e acho que não vai mudar um dia', 'se isso não mudar agora o futuro poderá ser assim'.</p>
+				<div class='local sine'></div>
+			</div>
+
+			<div class='dupla'>
+				<p class='descricao'>Muitas ideias e informações, com dificuldade para encontrar uma base estável. 'Se a gente fizesse isso as coisas poderiam ser mais adequadas/estáveis no futuro', 'se a gente não fizer isso agora, o futuro poderá ser diferente do que eu conheço'.</p>
+				<div class='local nesi'></div>
+			</div>
+
+			<div class='dupla'>
+				<p class='descricao'>Deseja intuir um futuro que possa dar prazer e conforto, mas tem pouca noção do momento presente. 'Eu estou fazendo isso agora para que o futuro seja do jeito que eu imagino', 'eu prevejo que no futuro teremos isso, e assim será mais agradável', 'eu vejo que será assim e quando eu estiver lá estarei confortável'.</p>
+				<div class='local nise'></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id='comunicacao'>
+	<h2>Comunicação</h2>
+	<div class='drag'>
+		<div class='conjunto-objetos local'>
+			<div draggable='true' class='objeto conclusivos'>IxxJ (Ni ou Si Dominante)</div>
+			<div draggable='true' class='objeto opinadores'>IxxP (Ti ou Fi Dominante)</div>
+			<div draggable='true' class='objeto agregadores'>ExxP (Ne ou Se Dominante)</div>
+			<div draggable='true' class='objeto decisivos'>ExxJ (Te ou Fe Dominante)</div>	
+		</div>
+		<div>
+			<div class='dupla'>
+				<p class='descricao'>Conclusivos: sua melhor forma de se portar diante do mundo externo é julgadora, porém de modo auxiliar. É responsivo. Quer responder com definições. Prefere que falem primeiro, buscando falar somente o necessário, mas vai direto ao ponto e é focado no assunto da pauta.</p>
+				<div class='local conclusivos'></div>
+			</div>
+
+			<div class='dupla'>
+				<p class='descricao'>Opinadores: sua melhor forma de se portar diante do mundo externo é perceptiva, porém de modo auxiliar. É responsivo. Quer responder com alternativas. Prefere que falem primeiro, buscando falar somente o necessário, mas responde sugerindo possibilidades e deixando as coisas em aberto.</p>
+				<div class='local opinadores'></div>
+			</div>
+
+			<div class='dupla'>
+				<p class='descricao'>Agregadores: sua melhor forma de se portar diante do mundo externo é perceptiva, de modo dominante. É inciador. Quer sugerir alternativas. Inicia as conversas, pensa enquanto fala e gosta de sugerir possibilidades, podendo mudar de assunto com facilidade, explorando ideias diferentes.</p>
+				<div class='local agregadores'></div>
+			</div>
+
+			<div class='dupla'>
+				<p class='descricao'>Decisivos: sua melhor forma de se portar diante do mundo externo é julgadora, de forma dominante. É iniciador. Quer chegar em definições claras. Inicia as conversas, pensa enquanto fala, mas vai direto ao ponto e prefere não deixar as coisas em aberto.</p>
+				<div class='local decisivos'></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id='raciocinio'>
+	<h2>Raciocínio</h2>
+	<div class='drag'>
+		<div class='conjunto-objetos local'>
+			<div draggable='true' class='objeto analitico'>xNTx (NT ou TN como primeiras funções)</div>
+			<div draggable='true' class='objeto experimental'>xNFx (NF ou FN como primeiras funções)</div>
+			<div draggable='true' class='objeto pratico'>xSTx (ST ou TS como primeiras funções)</div>
+			<div draggable='true' class='objeto relacional'>xSFx (SF ou FS como primeiras funções)</div>	
+		</div>
+		<div>
+			<div class='dupla'>
+				<p class='descricao'><span title='Tendem a abordar a vida e o trabalho de maneira lógica e objetiva e gostam de usar sua engenhosidade para focar nas possibilidades, principalmente nas possibilidades de aplicação técnica. Eles costumam ser encontrados em carreiras que exigem uma abordagem impessoal e analítica de ideias, informações e pessoas, e tendem a se interessar menos por carreiras que exigem uma abordagem calorosa, solidária e prática para ajudar as pessoas.'>Analítico: </span><span title='Tem maior considerações pelas leis que regem o mundo, sejam elas leis da sociedade, como as leis constitucionais ou leis naturais, como as leis da ciência, da forma como o universo se rege naturalmente. Por isso utiliza mais o raciocínio das leis para fazer seus argumentos.'>Estilo de empatia pragmática (fatos e dados).</span> <span title='Fazem observações abstratas sobre o mundo, da maneira como poderia ser ou poderia ter sido, ao invés do que realmente houve. Assim, constroem seus argumentos baseando-se em concepções e das possibilidades, de ideias futuras, da realidade alternativa que não existe, mas poderia existir segundo seu raciocínio.'>Encara a realidade de forma imaginativa.</span> Uma mistura de: 'o que aconteceria se fizéssemos isso, porém visando o que funciona e é comprovado?'</p>
+				<div class='local analitico'></div>
+			</div>
+
+			<div class='dupla'>
+				<p class='descricao'><span title='Tendem a abordar a vida e o trabalho de maneira calorosa e entusiasta, e gostam de se concentrar em ideias e possibilidades, particularmente "possibilidades para as pessoas" Eles são frequentemente encontrados em carreiras que requerem habilidades de comunicação, foco no abstrato e compreensão dos outros. Eles tendem a se interessar menos por carreiras que exijam uma abordagem impessoal ou técnica das coisas e dos dados factuais.'>Experimental: </span><span title='Tem maior considerações pela ética e moral entre as pessoas, da forma como as pessoas conduzem suas relações em sociedade e em grupos, em respeito as pessoas, sobre o que elas pensam e como elas são vistas de maneira geral. Por isso utiliza mais o raciocínio da fraternidade entre as pessoas para fazer seus argumentos.'>estilo de empatia fraterna (pessoas e relações sociais).</span> <span title='Fazem observações abstratas sobre o mundo, da maneira como poderia ser ou poderia ter sido, ao invés do que realmente houve. Assim, constroem seus argumentos baseando-se em concepções e das possibilidades, de ideias futuras, da realidade alternativa que não existe, mas poderia existir segundo seu raciocínio.'>Encara a realidade de forma imaginativa.</span> Uma mistura de: 'o que aconteceria se fizéssemos isso, porém visando o que é bom para todos?'</p>
+				<div class='local experimental'></div>
+			</div>
+
+			<div class='dupla'>
+				<p class='descricao'><span title='Abordam a vida e o trabalho de maneira objetiva e gostam de se concentrar nas realidades e aplicações práticas em seu trabalho. Frequentemente, são encontrados em carreiras que exigem uma abordagem técnica das coisas e tendem a se interessar menos por carreiras que exijam o cuidado com pessoas ou a atenção ao seu crescimento e desenvolvimento.'>Prático: </span><span title='Tem maior considerações pelas leis que regem o mundo, sejam elas leis da sociedade, como as leis constitucionais ou leis naturais, como as leis da ciência, da forma como o universo se rege naturalmente. Por isso utiliza mais o raciocínio das leis para fazer seus argumentos.'>estilo de empatia pragmática (fatos e dados).</span> <span title='Fazem colocações sobre o ambiente imediato a sua volta, observando a realidade das coisas como elas são, como acontecem ou como aconteceram. Por isso utilizam mais um raciocínio concreto e óbvio sobre o mundo nos seus argumentos para apontar coisas que consideram fatos.'>Encara a realidade de forma realista.</span> Uma mistura de: 'As coisas são assim e isto é feito desta forma, porque funciona e é comprovado'</p>
+				<div class='local pratico'></div>
+			</div>
+
+			<div class='dupla'>
+				<p class='descricao'><span title='Tendem a abordar a vida e o trabalho de uma maneira calorosa e voltada para as pessoas, gostando de se concentrar nas realidades e nas carreiras práticas. Eles são frequentemente encontrados em serviços humanos e em carreiras que exigem uma abordagem solidária para com as pessoas. Eles tendem a se interessar menos por carreiras que exijam uma abordagem analítica e impessoal de informações e ideias.'>Relacional: </span><span title='Tem maior considerações pela ética e moral entre as pessoas, da forma como as pessoas conduzem suas relações em sociedade e em grupos, em respeito as pessoas, sobre o que elas pensam e como elas são vistas de maneira geral. Por isso utiliza mais o raciocínio da fraternidade entre as pessoas para fazer seus argumentos.'>estilo de empatia fraterna (pessoas e relações sociais).</span> <span title='Fazem colocações sobre o ambiente imediato a sua volta, observando a realidade das coisas como elas são, como acontecem ou como aconteceram. Por isso utilizam mais um raciocínio concreto e óbvio sobre o mundo nos seus argumentos para apontar coisas que consideram fatos.'>Encara a realidade de forma realista.</span> Uma mistura de: 'As coisas são assim e isto é feito desta forma, porque é o melhor para todos'</p>
+				<div class='local relacional'></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id='temperamento'>
+	<h2>Temperamento</h2>
+	<div class='drag'>
+		<div class='conjunto-objetos local'>
+			<div draggable='true' class='objeto guardiao'>xSxJ (Guardião)</div>
+			<div draggable='true' class='objeto artesao'>xSxP (Artesão)</div>
+			<div draggable='true' class='objeto racional'>xNTx (Racional)</div>
+			<div draggable='true' class='objeto idealista'>xNFx (Idealista)</div>	
+		</div>
+		<div>
+			<div class='dupla'>
+				<p class='descricao'>Observadores atentos ao seu cronograma diário e das outras pessoas de forma a sempre manterem suas necessidades em ordem. Tudo deve estar no seu devido lugar, as pessoas em volta devem estar fazendo o que elas supostamente deveriam fazer e cada ação deve ser supervisionada e inspecionada de forma a chegar no final do dia com a sensação de dever cumprido. Palavras-chave: defensores, consdervadores, estáveis, consistentes, rotineiros, factuais, trabalhadores, detalhistas, perseverantes. O que fala: concreto (o que é). Como fala: afiliativo (o que é certo).</p>
+				<div class='local guardiao'></div>
+			</div>
+
+			<div class='dupla'>
+				<p class='descricao'>São atentos ao seu redor imediato de forma a detectar ou explorar qualquer coisa que estiver ao seu alcance. Ter liberdade de agir no impulso do momento quando bem entender é muito importante. Nenhuma chance passará em branco ou será desprezada sem que este se dê conta. Sempre que alguma coisa parecer excitante, prazerosa ou útil, ela será conferida por ele o quanto antes. São práticos, efetivos e vão atrás do que querem. Palavras-chave: adaptáveis, artísticos, atléticos, fáceis, tolerantes, persuasivos, habilidosos, sensitivos, curtidores. O que fala: abstrato (o que pode ser). Como fala: pragmático (o que funciona).</p>
+				<div class='local racional'></div>
+			</div>
+
+			<div class='dupla'>
+				<p class='descricao'>Sempre estão pensando em como podem resolver algum problema com o uso de alguma ferramenta, tecnologia ou solução. Para essa finalidade, eles requerem deles mesmos estarem constantemente usando suas funções racionais na sua ação diária. Querem achar lógica para tudo que fazem. Palavras-chave: analíticos, sistêmicos, teóricos, intelectuais, complexos, competentes, inventivos, eficientes, curiosos. O que fala: concreto (o que é). Como fala: pragmático (o que funciona).</p>
+				<div class='local artesao'></div>
+			</div>
+
+			<div class='dupla'>
+				<p class='descricao'>São amigáveis ao ponto de sonhar dando significado e integridade à vida das pessoas. Conflitos e intrigas os deixam sofrendo de forma que eles precisam ldiar com isso de uma forma muito pessoal. Se importam profundamente em manter a moral das pessoas elevada, nutrindo uma imagem positiva entre elas. Apesar de diferentes abordagens, todos eles querem que as pessoas do seu círculo estejam bem. Palavras-chave: humanitários, simpáticos, entusiastas, espirituais, criativos, intuitivos, perspicazes, subjetivos. O que fala: abstrato (o que pode ser). Como fala: afiliativo (o que é certo).</p>
+				<div class='local idealista'></div>
+			</div>
+		</div>
+	</div>
+</section>
+</body>
+</html>
